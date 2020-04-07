@@ -1,5 +1,5 @@
 % Example_1_NZ: Mesh the South Island of New Zealand
-clearvars; clc;
+clear; clc; %jak was here
 addpath(genpath('utilities/'))
 addpath(genpath('datasets/'))
 addpath(genpath('m_map/'))
