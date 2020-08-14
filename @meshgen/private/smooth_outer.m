@@ -52,7 +52,7 @@
             end
         end
         fdfdx = reshape(dmy',[numel(dmy),1]); 
-        clearvars dmy limidx xg yg; 
+        clear dmy limidx xg yg; 
 
         [hfun,flag] = limgradStruct(efs{ii}.ny,dx,dy,hfun,...
           fdfdx,sqrt(length(hfun)));
@@ -65,7 +65,7 @@
         end
         % reshape it back
         hh_m = reshape(hfun,efs{ii}.ny,[])';
-        clearvars hfun fdfdx
+        clear hfun fdfdx
         % Save it back into the interpolant
         efs{ii}.F.Values = hh_m;
     end

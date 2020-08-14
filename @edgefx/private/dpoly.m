@@ -13,7 +13,7 @@ if nargin == 3
 else
     [xg,yg] = CreateStructGrid(obj);
     p = [xg(:),yg(:)];
-    clearvars xg yg
+    clear xg yg
 end
 %% Doing the distance + inpoly calc
 if ~isempty(obj.lmsl)

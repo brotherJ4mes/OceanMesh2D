@@ -387,7 +387,7 @@ classdef geodata
                     obj.gridspace/obj.spacing);
                 obj.inner = []; obj.inner(:,1) = lo; obj.inner(:,2) = la;
             end
-            clearvars lo la
+            clear lo la
             
             % Smooth the coastline (apply moving average filter).
             if obj.window > 1

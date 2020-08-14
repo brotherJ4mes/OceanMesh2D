@@ -686,7 +686,7 @@ classdef msh
                     hold on; text(pos(2,1),pos(2,2),'End','color','r');
                     [la,lo]=interpm(pos(:,2),pos(:,1),5/111e3);
                     hold on; plot(lo,la,'r.')
-                    transect = [lo,la]; clearvars lo la
+                    transect = [lo,la]; clear lo la
                     if ~isempty(obj.b)
                         F = scatteredInterpolant(obj.p(:,1),obj.p(:,2),obj.b);
                     else
@@ -1718,7 +1718,7 @@ classdef msh
                             rm2(iii,1)=length(unique(nn(iii,:)))~=2 ;
                         end
                         front_nn(rm2) = [] ; back_nn(rm2) = [] ;
-                        clearvars rm2 ;
+                        clear rm2 ;
                         %                         % visualize node pairs
                         %                         plot(obj,'tri',0) ;
                         %                         hold on; plot(obj.p(front_nn,1),obj.p(front_nn,2),'r.') ;

@@ -282,7 +282,7 @@ classdef edgefx
                 warning('No mainland or inner')
                 xg = CreateStructGrid(obj);
                 obj.fsd = xg*NaN;
-                clearvars xg
+                clear xg
                 return
             end
             % Make sure we don't create a singularity on the coast in the
@@ -297,7 +297,7 @@ classdef edgefx
             % Calculate the gradient of the distance function.
             [ddy,ddx] = EarthGradient(d,dy,dx);
             d_fs = sqrt(ddx.^2 + ddy.^2);
-            clearvars ddx ddy
+            clear ddx ddy
             % WJP: This fix is to put a medial point in narrow channels
             rf = []; cf = [];
             for ii = 2:size(d,1)-1
@@ -325,7 +325,7 @@ classdef edgefx
             r = [r; rf']; c = [c; cf']; %WJP: add on "fixed points"
             x_kp = obj.x0y0(1) + (r-1)*obj.gridspace;
             y_kp = obj.x0y0(2) + (c-1)*obj.gridspace;
-            clearvars lg r c cf rf
+            clear lg r c cf rf
             % Ensure there are enough medial points nearby
             % to avoid surpurious medial points.
             % WJP: We want a line of points larger than around 7. This
@@ -426,9 +426,9 @@ classdef edgefx
                 % Set wld with mask applied
                 obj.wld(tmpz < dp1 & tmpz > dp2 ) = ...
                     twld(tmpz < dp1 & tmpz > dp2);
-                clearvars twld
+                clear twld
             end
-            clearvars tmpz xg yg;
+            clear tmpz xg yg;
         end
         
         %% Topographic length scale/slope edge function.
@@ -626,9 +626,9 @@ classdef edgefx
                 tslpd = (2*pi/slpp)*dp./(bs+eps);
                 obj.slpd(tmpz < dp1 & tmpz > dp2 ) = ...
                     tslpd(tmpz < dp1 & tmpz > dp2);
-                clearvars tslpd
+                clear tslpd
             end
-            clearvars tmpz xg yg
+            clear tmpz xg yg
         end
         
         %% Channel edgefunction
@@ -689,7 +689,7 @@ classdef edgefx
             dp = max(1,-tmpz);
             obj.chd(tidx) = dp/obj.ch;
             obj.chd(obj.chd < obj.min_el_ch) = obj.min_el_ch;
-            clearvars Fb pts dp radii tempbb xg yg
+            clear Fb pts dp radii tempbb xg yg
         end
         
         
@@ -773,7 +773,7 @@ classdef edgefx
             end
             
             [hh_m] = min(hh,[],3);
-            clearvars hh
+            clear hh
             
             [xg,yg] = CreateStructGrid(obj);
             
@@ -895,7 +895,7 @@ classdef edgefx
                 dmy = [dmy(end,:); dmy; dmy(1,:)];
             end
             fdfdx = reshape(dmy',[numel(dmy),1]); 
-            clearvars dmy; 
+            clear dmy; 
             
             [hfun,flag] = limgradStruct(obj.ny,dx,dy,hfun,...
                 fdfdx,sqrt(length(hfun)));
@@ -907,7 +907,7 @@ classdef edgefx
             end
             % reshape it back
             hh_m = reshape(hfun,obj.ny,[])';
-            clearvars hfun fdfdx
+            clear hfun fdfdx
             if all(abs(obj.bbox(1,:)) == 180) 
                 % for global mesh make it cyclical
                 hh_m = hh_m(2:end-1,:);
@@ -988,7 +988,7 @@ classdef edgefx
             
             obj.F = griddedInterpolant(xg,yg,hh_m,'linear','nearest');
             
-            clearvars xg yg
+            clear xg yg
         end
         
         function [xg,yg] = CreateStructGrid(obj)

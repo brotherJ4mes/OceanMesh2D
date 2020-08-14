@@ -338,7 +338,7 @@ if strcmp(interp,'CA')
         for ii = 1:length(K)
             pts = reshape(DEM_Z(IDXL(ii):IDXR(ii),...
                                 IDXB(ii):IDXT(ii)),[],1);
-            b(ii) = mean(pts,'omitnan');            
+            b(ii) = nanmean(pts); %jak
         end
         if sum(~isnan(b)) == 0
             warning('All depths were NaNs. Doing nothing and returning'); 
@@ -360,10 +360,10 @@ if strcmp(interp,'CA')
         for ii = 1:length(K)
             pts = reshape(DEM_ZX(IDXL(ii):IDXR(ii),...
                                  IDXB(ii):IDXT(ii)),[],1);
-            bx(ii) = sqrt(mean(pts.^2,'omitnan'));
+            bx(ii) = sqrt(nanmean(pts.^2)); %jak
             pts = reshape(DEM_ZY(IDXL(ii):IDXR(ii),...
                                  IDXB(ii):IDXT(ii)),[],1);
-            by(ii) = sqrt(mean(pts.^2,'omitnan'));
+            by(ii) = sqrt(nanmean(pts.^2)); %jak
         end
         if nanfill
             % Try and fill in the NaNs

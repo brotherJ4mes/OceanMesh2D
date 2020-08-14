@@ -54,7 +54,7 @@ for box_num = box_vec
             pt=obj.boubox{box_num};
             ee=Get_poly_edges(pt);
             inside = inpoly(p,pt,ee) ;
-            clearvars pt ee
+            clear pt ee
         else
             % It is the outermost box so all points are inside
             % this is enforced by construction of the boxes!

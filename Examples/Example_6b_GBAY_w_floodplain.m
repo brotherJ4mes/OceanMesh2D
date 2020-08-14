@@ -2,7 +2,7 @@
 % Continue on from Example_6_GBAY.m by building on
 % a floodplain onto the mesh.
 %%
-clearvars; close all; clc;
+clear; close all; clc;
 
 addpath(genpath('utilities/'))
 addpath(genpath('datasets/'))

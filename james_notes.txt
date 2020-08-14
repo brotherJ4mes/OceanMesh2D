@@ -1,0 +1,3 @@
+used:
+vi `grep -irl somekeyword *`
+then search for all occurences of somekeyword and fixed

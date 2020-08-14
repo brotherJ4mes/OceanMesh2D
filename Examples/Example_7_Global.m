@@ -1,5 +1,5 @@
 % Example_7_Global: Make a global mesh
-clearvars; clc;
+clear; clc;
 addpath(genpath('utilities/'));
 addpath(genpath('datasets/'));
 addpath(genpath('m_map/'));

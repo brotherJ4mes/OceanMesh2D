@@ -2,7 +2,7 @@
 % around Puerto Rico and US Virgin Islands.
 % User beware: this is a very intensive mesh generation example, takes
 % around 1 hr. 
-clc; clearvars
+clc; clear
 
 addpath(genpath('utilities/'))
 addpath(genpath('datasets/'))

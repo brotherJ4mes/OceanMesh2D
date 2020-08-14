@@ -681,7 +681,7 @@ classdef meshgen
                     disp(['3rd sigma lower mesh quality is ' num2str(mq_l3sig)])
                     tempp = p; tempt = t;
                     save('Temp_grid.mat','it','tempp','tempt');
-                    clearvars tempp tempt
+                    clear tempp tempt
                 end
                 
                 % 6. Move mesh points based on bar lengths L and forces F

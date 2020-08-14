@@ -1,5 +1,5 @@
 % Example_2_NY: Mesh the New York region in high resolution
-clearvars; clc;
+clear; clc;
 addpath(genpath('utilities/'))
 addpath(genpath('datasets/'))
 addpath(genpath('m_map/'))

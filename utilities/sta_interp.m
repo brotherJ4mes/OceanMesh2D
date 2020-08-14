@@ -6,8 +6,8 @@ function [a_int, p_int] = sta_interp(x,y,b,a,p,xq,yq)
     c = a.*exp(1i*deg2rad(p));
     
     % find median, standard deviations and absolute differences
-    Cmed    = median(c,2,'omitnan');
-    Cstd    = std(c,0,2,'omitnan');
+    Cmed    = median(c,2); %jak the package NAN's median fxn overloads median
+    Cstd    = nanstd(c,0,2); %jak 
     Cdiff   = abs(c - repmat(Cmed,1,size(c,2)));
     
     % Flag where all surrounding nodes return bad value for the station

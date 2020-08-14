@@ -1,6 +1,6 @@
 % Example_5_JBAY: Mesh the New York Jamaica bay (JBAY) region in 
 % high resolution.
-clc; clearvars
+clc; clear
 
 addpath(genpath('utilities/'));
 addpath(genpath('datasets/'));

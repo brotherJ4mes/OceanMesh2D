@@ -1,6 +1,6 @@
 % Example_6_GBAY: Mesh the Galveston bay (GBAY) region in
 % high resolution.
-clearvars; clc;
+clear; clc;
 
 addpath(genpath('utilities/'))
 addpath(genpath('datasets/'))

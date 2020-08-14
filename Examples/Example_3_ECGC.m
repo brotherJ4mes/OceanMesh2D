@@ -1,6 +1,6 @@
 % Example_3_ECGC: Mesh the greater US East Coast and Gulf of Mexico region
 % with a high resolution inset around New York
-clearvars; clc;
+clear; clc;
 addpath(genpath('utilities/'));
 addpath(genpath('datasets/'));
 addpath(genpath('m_map/'));

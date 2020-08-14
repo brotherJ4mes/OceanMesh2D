@@ -23,7 +23,7 @@ end
 dlat=abs(lat(2:end)-lat(1:end-1));
 dlon=abs(lon(2:end)-lon(1:end-1));
 nin=ceil(max([dlat,dlon],[],2)/maxdiff)-1;
-sumnin=sum(nin,'omitnan');
+sumnin=nansum(nin); %ja
 if sumnin==0
     disp('No incertion needed.');
     latout=lat;

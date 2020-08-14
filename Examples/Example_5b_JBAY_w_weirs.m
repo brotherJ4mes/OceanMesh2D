@@ -1,7 +1,7 @@
 % Example_5b_JBAY_w_weirs
 % Mesh the New York Jamaica bay (JBAY) region in 
 % high resolution with two 15-30 m wide weirs at the mouth of the estuary. 
-clc; clearvars
+clc; clear
 
 addpath(genpath('utilities/'));
 addpath(genpath('datasets/'));
